@@ -9,7 +9,7 @@
    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
-   <link rel="stylesheet" href="./index-style.css">
+   <link rel="stylesheet" href="../index-style.css">
 
 
    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -18,21 +18,29 @@
 
 <body>
    <div class="container">
-      <main>
-         <h2>Lista De Modelos e Carros</h2>
-         <table>
-            <thead>
-               <tr>
-                  <th>id</th>
-                  <th>Marca</th>
-                  <th>Modelo</th>
-                  <th>HP</th>
-                  <th>Acoes</th>
-               </tr>
-            </thead>
-            <tbody id="tabela-carros"></tbody>
-         </table>
-      </main>
+      <h4>Atualizar Carro</h4>
+      <form>
+         <fieldset>
+
+            <label for="nameField">ID</label>
+            <input type="text" id="id_carro" readonly>
+
+            <label for="nameField">Marca</label>
+            <input type="text" id="marca" required>
+
+            <label for="nameField">Modelo</label>
+            <input type="text" id="modelo" required>
+
+            <label for="nameField">HP</label>
+            <input type="text" id="hp" required maxlength="4">
+
+            <input class="button-primary" id="btn_atualizar" type="button" value="Atualizar">
+         </fieldset>
+      </form>
+      <div class="float-right">
+         <button id="btn_voltar">Voltar</button>
+      </div>
+
       <div class="wrapper">
          <footer>
             <p>Peterson Henrique de Padua</p>
@@ -40,7 +48,7 @@
          </footer>
       </div>
    </div>
-   <script src="/web/index.js"></script>
+   <script src="./edit.js"></script>
 </body>
 
 </html>
