@@ -6,11 +6,36 @@ document.addEventListener('DOMContentLoaded', function () {
   const inputModelo = document.getElementById('modelo');
   const inputHp = document.getElementById('hp');
 
-  document.getElementById('btn_atualizar').addEventListener('click', atualizarCarro);
+  const form = document.getElementById('form_edit_carro');
 
-  document.getElementById("btn_voltar").addEventListener('click',function (){
-   window.location.href = '../index.html';
-  })
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    document
+      .getElementById('btn_atualizar')
+      .addEventListener('click', atualizarCarro);
+
+    async function atualizarCarro() {
+      let idCarro = localStorage.getItem('idCarroEditar');
+      let carro = {
+        marca: inputMarca.value,
+        modelo: inputModelo.value,
+        hp: inputHp.value,
+      };
+      try {
+        const response = await axios.patch(`${URL_BASE}/${idCarro}`, carro);
+        alert('Carro atualizado com sucesso!');
+        window.location.href = '../index.html';
+      } catch (error) {
+        console.error('Erro ao atualizar o carro:', error);
+        alert('Erro ao atualizar o carro');
+      }
+    }
+  });
+
+  document.getElementById('btn_voltar').addEventListener('click', function () {
+    window.location.href = '../index.html';
+  });
 
   async function getCarro() {
     let idCarro = localStorage.getItem('idCarroEditar');
@@ -30,23 +55,6 @@ document.addEventListener('DOMContentLoaded', function () {
       inputHp.value = carro.data.hp;
     } catch (error) {
       console.error(error);
-    }
-  }
-
-  async function atualizarCarro() {
-    let idCarro = localStorage.getItem('idCarroEditar');
-    let carro = {
-      marca: inputMarca.value,
-      modelo: inputModelo.value,
-      hp: inputHp.value,
-    };
-    try {
-      const response = await axios.patch(`${URL_BASE}/${idCarro}`, carro);
-      alert('Carro atualizado com sucesso!');
-      window.location.href = '../index.html';
-    } catch (error) {
-      console.error('Erro ao atualizar o carro:', error);
-      alert('Erro ao atualizar o carro');
     }
   }
 

@@ -18,23 +18,19 @@
 
 <body>
    <div class="container">
-      <h4>Atualizar Carro</h4>
-      <form id="form_edit_carro">
+      <h4>Criar Carro</h4>
+      <form id="form_create_carro">
          <fieldset>
-
-            <label for="nameField">ID</label>
-            <input type="text" id="id_carro" readonly>
-
             <label for="nameField">Marca</label>
-            <input type="text" id="marca" required>
+            <input type="text" id="marca" required minlength="3">
 
             <label for="nameField">Modelo</label>
-            <input type="text" id="modelo" required>
+            <input type="text" id="modelo" required minlength="3">
 
             <label for="nameField">HP</label>
             <input type="text" id="hp" required maxlength="4">
 
-            <input class="button-primary" id="btn_atualizar" type="submit" value="Atualizar">
+            <input class="button-primary" id="btn_cadastrar" type="submit" value="Cadastrar">
          </fieldset>
       </form>
       <div class="float-right">
@@ -48,7 +44,7 @@
          </footer>
       </div>
    </div>
-   <script src="./edit.js"></script>
+   <script src="./create.js"></script>
 </body>
 
 </html>
