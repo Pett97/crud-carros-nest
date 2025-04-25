@@ -8,11 +8,11 @@ import { Carro } from './carro/entities/carro.entity';
 @Module({
   imports: [CarroModule,TypeOrmModule.forRoot({
     type:"mysql",
-    host:"10.93.47.146",
+    host:"10.93.47.34",
     port:3306,
-    username:"teste",
-    password:"91241506",
-    database:"carrosshow",
+    username:"teste2",
+    password:"123123",
+    database:"carrosshows",
     entities:[Carro],
     synchronize:true
   })],

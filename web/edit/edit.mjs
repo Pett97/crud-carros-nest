@@ -1,4 +1,5 @@
-const URL_BASE = 'http://localhost:3000/carro';
+import URL_BACKEND from "../const.mjs";
+const URL_BASE = URL_BACKEND;
 
 document.addEventListener('DOMContentLoaded', function () {
   const inputId = document.getElementById('id_carro');

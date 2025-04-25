@@ -1,21 +1,27 @@
-const URL_BASE = 'http://localhost:3000/carro';
+import URL_BACKEND from '../const.mjs';
+const URL_BASE = URL_BACKEND;
 
 document.addEventListener('DOMContentLoaded', function () {
   const inputId = document.getElementById('id_carro');
   const inputMarca = document.getElementById('marca');
   const inputModelo = document.getElementById('modelo');
   const inputHp = document.getElementById('hp');
-  const form = document.getElementById("form_create_carro");
+  const form = document.getElementById('form_create_carro');
 
-  form.addEventListener("submit",function(event){
-   event.preventDefault();
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
 
-   document.getElementById('btn_voltar').addEventListener('click', function () {
-      window.location.href = '../index.html';
-    });
+    document
+      .getElementById('btn_voltar')
+      .addEventListener('click', function () {
+        window.location.href = '../index.html';
+      });
 
-   document.getElementById("btn_cadastrar",this.addEventListener("click",cadastrarCarro())); 
-  
+    document.getElementById(
+      'btn_cadastrar',
+      this.addEventListener('click', cadastrarCarro()),
+    );
+
     async function cadastrarCarro() {
       let idCarro = localStorage.getItem('idCarroEditar');
       let carro = {
@@ -34,8 +40,5 @@ document.addEventListener('DOMContentLoaded', function () {
         alert('Erro ao cadastrar  carro');
       }
     }
-
-  })
-
-  
+  });
 });
