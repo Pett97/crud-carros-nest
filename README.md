@@ -1,100 +1,179 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# Crud Carros
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Bem-vindo ao projeto de CRUD de Carros desenvolvido com **NestJS**. Este repositório foi criado para facilitar a virtualização do ambiente usando **Docker** ou **Multipass**.
 
-## Description
+---
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## 🚗 Funcionalidades Principais
 
-## Project setup
+- **Simplicidade**: gerenciamento de uma única entidade: `Carro`.
+- **API REST**: endpoints disponíveis para integração via HTTP.
+- **Acesso Web**: frontend para interação com o sistema.
 
-```bash
-$ yarn install
-```
+---
 
-## Compile and run the project
+## ▶️ Como Executar o Projeto
 
-```bash
-# development
-$ yarn run start
+### ⚙️ Pré-requisitos
 
-# watch mode
-$ yarn run start:dev
+Certifique-se de ter as seguintes dependências instaladas:
 
-# production mode
-$ yarn run start:prod
-```
+- Docker ou Multipass
+- Node.js
+- NGINX
 
-## Run tests
+> ⚠️ Este projeto assume que você já tem familiaridade com Docker ou Multipass.
+
+📺 [Vídeo de apresentação e configuração](https://www.youtube.com/watch?v=oditGWmKjf8&t=24s)
+
+---
+
+### 1️⃣ Configurar Ambiente SQL (MariaDB ou MySQL) docker ou multipass
+
+Você precisa de um banco de dados com acesso remoto habilitado.
+
+🔗 [Como instalar MySQL no Ubuntu (DigitalOcean)](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-22-04)
+
+---
+
+### 2️⃣ Clonar o Repositório ambente dev docker ou multipass 
 
 ```bash
-# unit tests
-$ yarn run test
-
-# e2e tests
-$ yarn run test:e2e
-
-# test coverage
-$ yarn run test:cov
+git clone https://github.com/Pett97/crud-carros-nest.git
 ```
 
-## Deployment
+---
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+### 3️⃣ Instalar Dependências no Ambiente de Desenvolvimento
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+No container de desenvolvimento (ou máquina local), instale as dependências:
 
 ```bash
-$ yarn install -g @nestjs/mau
-$ mau deploy
+yarn install
+# ou
+npm install
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+---
 
-## Resources
+### 4️⃣ Configurar Conexão com o Banco de Dados
 
-Check out a few resources that may come in handy when working with NestJS:
+Edite o arquivo `src/app.module.ts` com as credenciais do seu banco:
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+```ts
+TypeOrmModule.forRoot({
+  type: 'mysql',
+  host: '<IP_HOST_SQL>',
+  port: 3306,
+  username: '<SEU_USUARIO>',
+  password: '<SUA_SENHA>',
+  database: '<NOME_DO_BANCO>',
+  entities: [Carro],
+  synchronize: true,
+})
+```
 
-## Support
+---
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### 5️⃣ Testar a API
 
-## Stay in touch
+Você pode utilizar o Postman ou qualquer outra ferramenta para testar a API.
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- **Rota:** `http://<IP_DEV>/carro`
+- **Body exemplo (POST):**
 
-## License
+```json
+{
+  "marca": "Ford",
+  "modelo": "Mustang-GT",
+  "hp": 450
+}
+```
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
-# crud-carros-nest
-# crud-carros-nest
+- **Resposta esperada:** `HTTP 201 Created`
+
+---
+
+## 🌐 Ambiente Web
+
+### 1️⃣ Clonar o Projeto no Servidor Web
+
+```bash
+cd /var/www/
+git clone https://github.com/Pett97/crud-carros-nest.git
+```
+
+Resultado esperado:
+
+```
+/var/www/crud-carros-nest/web
+```
+
+---
+
+### 2️⃣ Configurar NGINX
+
+#### Habilitar `.mjs` no `mime.types`
+
+```bash
+sudo nano /etc/nginx/mime.types
+```
+
+Adicione a linha:
+
+```nginx
+application/javascript           js mjs;
+```
+
+#### Editar Virtual Host
+
+Edite o arquivo de configuração em `/etc/nginx/sites-available/default`:
+
+```nginx
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/crud-carros-nest/web;
+    index index.html index.htm;
+
+    server_name _;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+```
+
+### 3️⃣ Testar e Reiniciar NGINX
+
+```bash
+sudo nginx -t
+sudo systemctl restart nginx
+```
+
+---
+
+### 4️⃣ Configurar URL do Backend no Frontend
+
+Edite o arquivo:
+
+```
+/var/www/crud-carros-nest/web/const.mjs
+```
+
+Atualize a constante:
+
+```js
+const URL_BACKEND = 'http://<IP_DO_BACKEND>/carro';
+```
+
+---
+
+### ✅ Acessar o Projeto Web
+
+Abra o navegador e acesse: `http://<IP_SERVIDOR_WEB>`  
+Você poderá utilizar o CRUD de carros diretamente pela interface gráfica.
+
+---
